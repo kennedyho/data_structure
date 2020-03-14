@@ -30,11 +30,17 @@ public class Stack<T> implements Iterable<T> {
 
     // Pop item from the head of the linked list
     public T pop() {
+        if (isEmpty()) {
+            throw new java.util.EmptyStackException();
+        }
         return stack.removeFirst();
     }
 
     // Return the first item of the linked list
     public T peek() {
+        if (isEmpty()) {
+            throw new java.util.EmptyStackException();
+        }
         return stack.getFirst();
     }
 
